@@ -1,0 +1,126 @@
+nav {
+  background: #4b6cb7;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #eaeaea;
+}
+
+header {
+  background: #4b6cb7;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+#chatBox {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.message {
+  background: #d1e7ff;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 20px;
+  max-width: 80%;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+button {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background: #4b6cb7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3a539b;
+}
+
+#customize {
+  margin-top: 30px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form input {
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 45%;
+}
+
+form button {
+  padding: 10px 20px;
+  background: #4b6cb7;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #3a539b;
+}
+
+#customList {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+#about {
+  margin-top: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#about h2 {
+  color: #4b6cb7;
+  margin-bottom: 10px;
+}
+
+#about p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}

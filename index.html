@@ -1,0 +1,85 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signify – Chat</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <nav>
+    <a href="/">Chat</a>
+    <a href="/customize">Customize</a>
+    <a href="/about">About</a>
+  </nav>
+
+  <header>
+    <h1>Signify</h1>
+    <p>Gesture-to-Speech Chat Interface</p>
+  </header>
+
+  <main>
+    <div id="chatBox"></div>
+    <button onclick="simulatePrediction()">Simulate Gesture</button>
+    <button onclick="speakLast()">🔊 Speak Last</button>
+  </main>
+
+  <script src="{{ url_for('static', filename='chat.js') }}"></script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signify – Chat</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">Chat</a>
+    <a href="/customize">Customize</a>
+    <a href="/about">About</a>
+  </nav>
+
+  <header>
+    <h1>Signify</h1>
+    <p>Gesture-to-Speech Chat Interface</p>
+  </header>
+
+  <main>
+    <div id="chatBox" style="margin-top: 20px; font-size: 20px;"></div>
+    <button onclick="simulatePrediction()">Simulate Gesture</button>
+    <button onclick="speakLast()">🔊 Speak Last</button>
+  </main>
+
+  <script>
+    let lastPrediction = "";
+
+    function simulatePrediction() {
+      fetch('/predict')
+        .then(response => response.json())
+        .then(data => {
+          const result = "Predicted Gesture: " + data.prediction;
+          document.getElementById('chatBox').innerText = result;
+          lastPrediction = data.prediction;
+        })
+        .catch(error => {
+          document.getElementById('chatBox').innerText = "Error fetching prediction";
+          console.error(error);
+        });
+    }
+
+    function speakLast() {
+      if (lastPrediction && lastPrediction !== "No data") {
+        const utterance = new SpeechSynthesisUtterance("Gesture " + lastPrediction);
+        speechSynthesis.speak(utterance);
+      } else {
+        const utterance = new SpeechSynthesisUtterance("No gesture to speak");
+        speechSynthesis.speak(utterance);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signify – Customize</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">Chat</a>
+    <a href="/customize">Customize</a>
+    <a href="/about">About</a>
+  </nav>
+
+  <header>
+    <h1>Customize Gestures</h1>
+    <p>Map gestures to personalized words</p>
+  </header>
+
+  <main>
+    <form id="customForm">
+      <input type="text" id="gestureId" placeholder="Gesture ID" required />
+      <input type="text" id="customWord" placeholder="Custom Word" required />
+      <button type="submit">Save Mapping</button>
+    </form>
+    <div id="customList"></div>
+  </main>
+
+  <script src="{{ url_for('static', filename='chat.js') }}"></script>
+  <script src="script.js"></script>
+</body>
+</html>

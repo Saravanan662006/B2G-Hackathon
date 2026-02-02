@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signify – About</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">Chat</a>
+    <a href="/customize">Customize</a>
+    <a href="/about">About</a>
+  </nav>
+
+  <header>
+    <h1>About Signify</h1>
+  </header>
+
+  <main>
+    <section id="about">
+      <p><strong>Signify</strong> is a gesture-to-speech system designed to empower communication for individuals with speech impairments. It uses flex sensors and machine learning to translate hand signs into spoken words.</p>
+      <p>Users can customize gestures to represent personal vocabulary like names, places, or phrases. This makes Signify adaptable across languages and cultures.</p>
+      <p><strong>Tech Stack:</strong> Arduino/Raspberry Pi, Python (scikit-learn/TensorFlow), Flask, HTML/CSS/JavaScript, Web Speech API.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
